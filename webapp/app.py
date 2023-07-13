@@ -39,8 +39,8 @@ def home_page():
     return render_template('index.html', form=rf, movies=None)
 
 if __name__ == '__main__':
-    movies_dict = pickle.load(open('movies_dict.pkl', 'rb'))
+    movies_dict = pickle.load(open('./dataset_web/movies_dict.pkl', 'rb'))
     movies = pd.DataFrame(movies_dict)
-    similarity = pickle.load(open('similarity.pkl', 'rb'))
+    similarity = pickle.load(open('./dataset_web/similarity.pkl', 'rb'))
     app.run(debug=True)
 
