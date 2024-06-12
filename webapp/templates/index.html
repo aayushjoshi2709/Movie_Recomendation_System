@@ -15,40 +15,17 @@
     {% if movies %}
         <div class="container mt-5 w-75 mx-auto my-3 text-center d-flex justify-content-evenly" style="flex-wrap: wrap;">
             {%for movie in movies%}
-                <div class="card bg-dark text-white m-2" style="width: 18rem;">
-                    <img class="card-img-top" style=" display: block;
-                    width: 100%;
-                    height: 300px;" src="{{movie.poster}}" alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-text">{{movie.title}}</p>
+                <a href="/desc/{{movie.id}}">
+                    <div class="card bg-dark text-white m-2 movie-list-comp" style="width: 18rem;">
+                        <!-- <img class="card-img-top" style=" display: block;
+                        width: 100%;
+                        height: 300px;" src="{{movie.poster}}" alt="Card image cap"> -->
+                        <div class="card-body">
+                            <p class="card-text">{{movie.title}}</p>
+                        </div>
                     </div>
-                </div>
+                </a>
             {%endfor%}
         </div>
     {%endif%}
-    <!--     
-    selected_movie_name = st.selectbox(
-        'Select a movie',
-        movies['title'].values)
-
-    if st.button('Recommend'):
-        movies, posters = recommend(selected_movie_name)
-        col1, col2, col3= st.columns(3)
-        with col1:
-            st.text(movies[0])
-            st.image(posters[0])
-        with col2:
-            st.text(movies[1])
-            st.image(posters[1])    
-        with col3:
-            st.text(movies[2])
-            st.image(posters[2])
-
-        col4, col5 = st.columns(2)
-        with col4: 
-            st.text(movies[3])
-            st.image(posters[3])
-        with col5:
-            st.text(movies[4])
-            st.image(posters[4]) -->
 {%endblock%}
